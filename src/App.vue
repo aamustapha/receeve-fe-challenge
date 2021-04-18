@@ -1,31 +1,28 @@
 <template>
-  <div class="challenge">
-    <img id="company-logo" alt="Vue logo" src="./assets/logo.png">
-    <Challenge msg="Welcome to the challenge 🐰"/>
+  <div id="app">
+    <router-view/>
   </div>
 </template>
 
-<script lang="ts">
-import Challenge from './components/Challenge.vue'
-import { Component, Vue } from "vue-property-decorator";
-
-@Component({ components: { Challenge } })
-export default class App extends Vue {
-  mounted(): void {
-    console.log("let's go")
-  }
-}
-</script>
-
-<style>
-.challenge {
+<style lang="scss">
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
-#company-logo {
-  width: 120px;
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 </style>
