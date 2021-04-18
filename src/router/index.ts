@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Challenge from '../views/Challenge.vue'
+import Challenge from '../components/Challenge.vue'
 
 Vue.use(VueRouter)
 

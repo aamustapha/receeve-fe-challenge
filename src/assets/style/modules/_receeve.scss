@@ -1,0 +1,9 @@
+@layer components {
+  .container-fluid {
+    @apply w-screen pl-60;
+
+    main {
+      @apply w-full px-4
+    }
+  }
+}
