@@ -5,7 +5,7 @@
       For details about the acceptance criteria go to the README file.
     </p>
 
-    <h3>Links of interest</h3>
+    <button class="button">Links of interest</button>
     <ul>
       <li>
         <a href="https://vuejs.org" target="_blank" rel="noopener">Vue Docs</a>
