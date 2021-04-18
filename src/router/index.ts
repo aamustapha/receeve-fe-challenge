@@ -8,7 +8,11 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
-    component: Challenge
+    component: Challenge,
+    children: [
+      {path: '', component: ()=> import('@/views/Dashboard')},
+      {path: 'accounts', component: ()=> import('@/views/Accounts')}
+    ]
   }
 ]
 
