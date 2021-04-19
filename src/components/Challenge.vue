@@ -16,7 +16,7 @@
 
     </div>
     <div class="container-fluid">
-      <header class="bg-gray-50 w-full text-2xl font-black px-3 py-5 mb-3 shadow-sm text-primary uppercase">
+      <header class="bg-gray-50 w-full text-2xl font-black px-3 py-5 shadow-sm text-primary uppercase fixed">
         {{ $route.name }}
       </header>
       <main>
