@@ -6,4 +6,21 @@
       @apply w-full px-2
     }
   }
+
+  .card {
+    @apply bg-white rounded-md shadow-md w-full;
+
+    &:hover {
+      @apply shadow-lg
+    }
+  }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+

@@ -16,7 +16,7 @@
 
     </div>
     <div class="container-fluid">
-      <main>dafa
+      <main>
         <router-view />
       </main>
     </div>

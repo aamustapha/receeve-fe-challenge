@@ -19,7 +19,7 @@ module.exports = {
                 roboto: ['Roboto']
             },
             width: {
-                '60-compliment': 'calc(100vw - 15rem)'
+                '60-compliment': 'calc(100vw - 19rem)'
             }
         }
     }
