@@ -11,7 +11,8 @@ const routes: Array<RouteConfig> = [
     component: Challenge,
     children: [
       {path: '', component: ()=> import('@/views/Dashboard'), name: 'Dashboad'},
-      {path: 'accounts', component: ()=> import('@/views/Accounts'), name: 'Accounts'}
+      {path: 'accounts', component: ()=> import('@/views/Accounts'), name: 'Accounts'},
+      {path: 'accounts/:id/', component: ()=> import('@/views/AccountInfo'), name: 'Account Detail'}
     ]
   }
 ]
