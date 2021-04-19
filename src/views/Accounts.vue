@@ -7,7 +7,7 @@
 import {Component, Vue, Prop} from "vue-property-decorator";
 
 @Component
-export default class Challenge extends Vue {
+export default class Accounts extends Vue {
   @Prop()
   msg!: string;
 }
