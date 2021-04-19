@@ -47,9 +47,14 @@ export default class Accounts extends Vue {
       params: this.$route.params,
       query: {page}
     } as RawLocation)
+    this.fetchAccounts()
   }
 
   created() {
+    this.fetchAccounts()
+  }
+
+  fetchAccounts () {
     axios.get(`http://localhost:9001/accounts?_page=${this.page}`).then(response => {
       this.accounts = response.data as Array<Account>
       this.pageCount = Math.ceil(+response.headers['x-total-count'] / 10)
