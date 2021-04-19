@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 gap-2">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
     <account-component :id="account.id" :debtor="account.debtor" v-for="account in accounts" :key="account.id"/>
   </div>
 </template>
