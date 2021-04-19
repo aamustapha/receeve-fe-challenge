@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Challenge from '../components/Challenge.vue'
+import Login from "@/views/Login.vue";
 
 Vue.use(VueRouter)
 
@@ -14,6 +15,11 @@ const routes: Array<RouteConfig> = [
       {path: 'accounts', component: ()=> import('@/views/Accounts'), name: 'Accounts'},
       {path: 'accounts/:id/', component: ()=> import('@/views/AccountInfo'), name: 'Account Detail'}
     ]
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   }
 ]
 

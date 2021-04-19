@@ -16,9 +16,7 @@
 
     </div>
     <div class="container-fluid">
-      <header class="bg-gray-50 w-full text-2xl font-black px-3 py-5 shadow-sm text-primary uppercase fixed">
-        {{ $route.name }}
-      </header>
+      <Navbar />
       <main>
         <router-view />
       </main>
@@ -26,3 +24,12 @@
 
   </div>
 </template>
+<script lang="ts">
+import Navbar from "@/components/Navbar"
+import {Component, Vue} from "vue-property-decorator";
+@Component({
+  components: {Navbar}
+})
+export default class Challenge extends Vue {
+}
+</script>
