@@ -19,6 +19,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/login',
     name: 'Login',
+    meta: { isPublic: true },
     component: Login
   }
 ]
@@ -27,6 +28,21 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = window.localStorage.getItem("isAuthenticated") === "true"
+
+  if (isAuthenticated && to.meta.isPublic) { // prevent going to login if signed in
+    return
+  }
+
+  if (!isAuthenticated && !to.meta.isPublic) {
+    return next("/login")
+  }
+
+  return next()
+
 })
 
 export default router
