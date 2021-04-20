@@ -42,7 +42,7 @@ export default class Accounts extends Vue {
   }
 
   get search() {
-    return this.$route.query.search
+    return this.$route.query.search || ""
   }
 
   next(page = this.page + 1) {
