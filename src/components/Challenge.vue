@@ -10,8 +10,8 @@
       </div>
 
       <nav class="sidebar__nav">
-        <router-link to="/" class="sidenav__nav-item" exact-active-class="active">Dashboard</router-link>
-        <router-link to="/accounts" class="sidenav__nav-item" exact-active-class="active">Account</router-link>
+        <router-link to="/dashboard" class="sidenav__nav-item" active-class="active">Dashboard</router-link>
+        <router-link to="/accounts" class="sidenav__nav-item" active-class="active">Account</router-link>
       </nav>
 
     </div>

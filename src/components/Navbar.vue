@@ -19,17 +19,18 @@
         </div>
       </div>
 
-      <button id="drop" class="flex items-center relative" @focus="dropDownOpen = true" @blur.="dropDownOpen = false">
+      <button id="drop" class="flex items-center relative" @focus="dropDownOpen = true" @blur="dropDownOpen = false">
         <img src="https://ik.imagekit.io/hooli/tr:w-307,h-307,cm-extract,x-82,y-16/my-pic-no-bg_nCv-YDCui.webp "
              class="w-12 h-12 rounded-full shadow-lg"/>
+        <div for="drop" :class="['absolute right-0 top-8']" v-show="dropDownOpen">
+          <ul class=" bg-blue-50 border border-t-0 shadow-xl text-gray-700 rounded-lg w-48 bottom-10">
+            <li><a @click.prevent="logout" class="block px-4 text-left py-2 hover:bg-blue-100 cursor-pointer">Logout</a></li>
+          </ul>
+        </div>
       </button>
     </div>
 
-    <label for="drop" :class="['absolute right-0 top-14']" >
-      <ul class=" bg-blue-50 border border-t-0 shadow-xl text-gray-700 rounded-lg w-48 bottom-10 right-0 mr-6">
-        <li><a @click="logout" class="block px-4 text-left py-2 hover:bg-blue-100 cursor-pointer">Logout</a></li>
-      </ul>
-    </label>
+
   </div>
 </template>
 

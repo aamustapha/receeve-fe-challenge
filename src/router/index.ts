@@ -9,9 +9,10 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
+    redirect: 'dashboard',
     component: Challenge,
     children: [
-      {path: '', component: ()=> import('@/views/Dashboard'), name: 'Dashboad'},
+      {path: 'dashboard', component: ()=> import('@/views/Dashboard'), name: 'Dashboard'},
       {path: 'accounts', component: ()=> import('@/views/Accounts'), name: 'Accounts'},
       {path: 'accounts/:id/', component: ()=> import('@/views/AccountInfo'), name: 'Account Detail'}
     ]
