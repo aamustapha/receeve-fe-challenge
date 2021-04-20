@@ -4,9 +4,10 @@
     <div class="w-96 mx-auto card py-2 px-4">
       <h4 class="mb-3 uppercase font-black text-2xl text-primary-light text-center">Login</h4>
       <form @submit.prevent="login()">
-      {{focus}}
-      {{credentials}}
-      <div class="form-floating ">
+        <p class="bg-blue-200 text-blue-900 text-center text-sm rounded px-4 py-2">
+          Remember to treat your password like a toothbrush, never share it with anyone!
+        </p>
+        <div class="form-floating ">
         <label for="username" :class="[ {'form-filled-label': focus.username }, 'form-label']">Username</label>
         <input
             id="username"
@@ -36,6 +37,7 @@
           </svg>
 
           Login</button>
+        <p class="text-center text-xs pb-3 text-primary-light">Use any credential combination for false login</p>
       </form>
     </div>
 
@@ -60,6 +62,12 @@ export default class Login extends Vue {
     password: this.credentials.password.length > 0,
   }
 
+  mounted () {
+    this.focus = {
+      username: this.credentials.username.length > 0,
+      password: this.credentials.password.length > 0,
+    }
+  }
   focussed (field: string): void {
     this.focus[field] = true
   }
