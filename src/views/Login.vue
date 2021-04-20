@@ -57,7 +57,7 @@ export default class Login extends Vue {
     username: "",
     password: ""
   }
-  focus = {
+  focus: object = {
     username: this.credentials.username.length > 0,
     password: this.credentials.password.length > 0,
   }
@@ -68,13 +68,13 @@ export default class Login extends Vue {
       password: this.credentials.password.length > 0,
     }
   }
+
   focussed (field: string): void {
     this.focus[field] = true
   }
 
   blurred (field: string): void {
-    console.log(this.credentials[field])
-    this.focus[field] = this.credentials[field]?.length  > 0|| false
+    this.focus[field] = (this.credentials[field]?.length  > 0 )|| false
   }
 
   login () {

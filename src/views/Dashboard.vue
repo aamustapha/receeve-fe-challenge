@@ -118,7 +118,7 @@ export default class Dashboard extends Vue {
     }, 0) / this.claims.length
   }
 
-  moneyFormat(amount, currency="EUR,") {
+  moneyFormat(amount: number, currency="EUR,") {
     return moneyFormat(amount, currency)
   }
 

@@ -48,7 +48,7 @@ export default class Navbar extends Vue {
     this.$router.replace("/login")
   }
 
-  search(v) {
+  search(v: Event) {
     this.$router.replace({
       name: this.$route.name,
       params: this.$route.params,
