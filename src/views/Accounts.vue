@@ -24,7 +24,7 @@
   </div>
 </template>
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
+import {Component, Vue, Watch} from "vue-property-decorator";
 import axios from "axios";
 import {Account} from "@/models";
 import AccountComponent from "@/components/Account.vue";
@@ -41,6 +41,10 @@ export default class Accounts extends Vue {
     return this.$route.query?.page || 1
   }
 
+  get search() {
+    return this.$route.query.search
+  }
+
   next(page = this.page + 1) {
     this.$router.replace({
       name: this.$route.name,
@@ -54,8 +58,14 @@ export default class Accounts extends Vue {
     this.fetchAccounts()
   }
 
+  @Watch('search')
+  onSearchUpdated() {
+    console.log(this.search)
+    this.fetchAccounts()
+  }
+
   fetchAccounts () {
-    axios.get(`http://localhost:9001/accounts?_page=${this.page}`).then(response => {
+    axios.get(`http://localhost:9001/accounts?_page=${this.page}&q=${this.search}`).then(response => {
       this.accounts = response.data as Array<Account>
       this.pageCount = Math.ceil(+response.headers['x-total-count'] / 10)
     })
