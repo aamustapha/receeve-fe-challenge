@@ -12,7 +12,11 @@
         </thead>
         <tbody>
         <account-component :id="account.id" :debtor="account.debtor" v-for="account in accounts" :key="account.id"/>
-
+        <tr v-if="accounts.length === 0">
+          <td colspan="5" class="text-center">
+            No results found
+          </td>
+        </tr>
         </tbody>
       </table>
     </div>

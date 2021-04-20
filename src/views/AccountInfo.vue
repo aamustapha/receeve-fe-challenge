@@ -52,6 +52,11 @@
           <td>{{ claim.dueDate }}</td>
           <td>{{ claim.status }}</td>
         </tr>
+        <tr v-if="claims.length === 0">
+          <td colspan="4" class="text-center">
+            No results found
+          </td>
+        </tr>
         </tbody>
       </table>
     </div>
